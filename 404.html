@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>404 — Page not found · Giuseppe Orellana</title>
+<meta name="description" content="The page you're looking for doesn't exist." />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink:   #1C1D20;
+    --paper: #FFFFFF;
+    --line:  #5A5B5F;
+    --mute:  #8A8B8F;
+    --mono:  "Geist Mono", ui-monospace, "SF Mono", "Roboto Mono", Menlo, monospace;
+    --ease:  cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--mono);
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+  }
+
+  ::selection { background: var(--paper); color: var(--ink); }
+
+  .e404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2.25rem, 5vw, 3.25rem);
+  }
+
+  .e404__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    width: clamp(240px, 30vw, 340px);
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--line);
+  }
+
+  .e404__num {
+    margin: 0;
+    font-weight: 500;
+    font-size: clamp(4.5rem, 11vw, 7.5rem);
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: var(--paper);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.04em;
+  }
+
+  /* Reference's dotted zero, drawn: hollow oval ring + centered dot */
+  .e404__zero {
+    position: relative;
+    display: inline-block;
+    width: 0.56em;
+    height: 0.74em;
+    border: 0.082em solid var(--paper);
+    border-radius: 50%;
+  }
+  .e404__zero::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.13em;
+    height: 0.13em;
+    border-radius: 50%;
+    background: var(--paper);
+    transform: translate(-50%, -50%);
+  }
+
+  .e404__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1.15rem, 2.6vw, 1.65rem);
+  }
+
+  .e404__cap {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mute);
+    white-space: nowrap;
+  }
+
+  .e404__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: clamp(200px, 24vw, 248px);
+    padding: 1.1rem 1.5rem;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--paper);
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.14s var(--ease), color 0.14s var(--ease);
+  }
+  .e404__btn:hover,
+  .e404__btn:focus-visible {
+    background: transparent;
+    color: var(--paper);
+    outline: none;
+  }
+  .e404__btn:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
+</style>
+</head>
+<body>
+
+  <main class="e404">
+    <div class="e404__box">
+      <p class="e404__num" aria-label="404">4<span class="e404__zero" aria-hidden="true"></span>4</p>
+      <p class="e404__cap">Got lost?</p>
+    </div>
+    <a class="e404__btn" href="index.html">Return to home</a>
+  </main>
+
+</body>
+</html>

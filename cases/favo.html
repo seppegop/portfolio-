@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Favo — Getting 30% of customers to actually use the app</title>
+<meta name="description" content="How a discovery phase reframed a stalled growth feature, and doubled session conversion from 7% to 14% at Favo." />
+<link rel="icon" type="image/png" href="../assets/favicon.png" />
+<link rel="apple-touch-icon" href="../assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="../pages.css" />
+<link rel="stylesheet" href="../loader.css" />
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" data-loader data-loader-word="FAVO" role="presentation" aria-hidden="true">
+  <div class="loader__box">
+    <span class="loader__word">FAVO</span>
+    <div class="loader__bar" aria-hidden="true"><span></span></div>
+  </div>
+</div>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="reading-progress" aria-hidden="true"><span></span></div>
+
+<div class="frame">
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="brand" aria-label="Giuseppe Orellana — home">
+        <span>Giuseppe Orellana</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../work.html">Work</a>
+        <a href="../about.html">About</a>
+        <a href="mailto:gop.orellanap@gmail.com?subject=Hey%20Giuseppe%20Orellana">Email</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="cs-head" data-screen-label="Favo — header">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="../index.html">home</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="../work.html">work</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span class="here">02 · Favo</span>
+      </nav>
+      <p class="cs-kicker">Social commerce · $55M raised</p>
+      <h1 class="cs-title">Getting 30% of customers to actually use the app at Favo</h1>
+      <p class="cs-dek">How a discovery phase reframed a stalled growth feature, and doubled session conversion from 7% to 14%.</p>
+    </section>
+
+    <div class="cs-hero-fig" data-screen-label="Favo — hero figure">
+      <img class="figimg r-16-10" src="../assets/favo-hero.jpg" alt="Isometric montage of the Favo social-commerce app — mobile screens showing the personalized home, promotions, category grid, savings and order-confirmation flows, on a soft pink background." />
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-grid">
+
+        <nav class="cs-toc" data-mininav aria-label="On this page">
+          <ol>
+            <li><a href="#tldr">tl;dr</a></li>
+            <li><a href="#context">context</a></li>
+            <li><a href="#decision">the decision</a></li>
+            <li><a href="#shipped">what shipped</a></li>
+            <li><a href="#outcome">outcome</a></li>
+            <li><a href="#reflection">reflection</a></li>
+          </ol>
+          <div class="toc-meta">
+            Product Design Lead<br />
+            Favo · social commerce<br />
+            led the design team<br />
+            Dec 2022 – Mar 2024
+          </div>
+        </nav>
+
+        <article class="cs-main" data-article>
+
+          <section class="sec" id="tldr">
+            <p class="sec__label"><span class="n">§</span> tl;dr</p>
+            <div class="tldr">
+              <div class="tldr__meta">
+                <span class="k">Product Design Lead</span>
+                <span>Favo · social commerce · $55M raised</span>
+                <span>led the design team</span>
+                <span>Dec 2022 – Mar 2024</span>
+              </div>
+              <div class="tldr__body">
+                <p>I led the redesign of Favo's core shopping experience, merging the seller and buyer apps into one. By grounding the work in a discovery phase that revealed how customers actually bought, we grew daily active users from 10K to 35K+ and lifted session conversion from <span class="em">7% to 14%</span>, roughly 7× the Peruvian e-commerce average.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="sec" id="context">
+            <p class="sec__label"><span class="n">01</span> context</p>
+            <div class="prose">
+              <p>Favo is a social commerce startup connecting door-to-door sellers (“entrepreneurs”) with neighbors buying groceries, saving families money and giving sellers extra income. The company's main growth bet, a feature called Community Purchases, was stalling: only <span class="num-em">12.9%</span> of exposed sellers participated, and <span class="num-em">41%</span> of buyers bought only the promo item and never returned. Average order value and engagement among top sellers were sliding. I led the design team responsible for turning this around.</p>
+              <p class="cs-aside"><span class="k">context note</span> Before we could redesign, the team first migrated 100% of users onto the new app without hurting conversion, an engineering and PM effort I supported but don't claim as a design win.</p>
+            </div>
+          </section>
+
+          <section class="sec" id="decision">
+            <p class="sec__label"><span class="n">02</span> the interesting decision</p>
+            <h2 class="sec__h">Stop optimizing the feature, find out who's actually buying</h2>
+            <div class="prose">
+              <p>The obvious path was to keep iterating on Community Purchases: better rules, better UI. Instead, we ran a discovery phase to ask a more basic question: why weren't sellers participating? The answer reframed the entire problem.</p>
+              <p>Interviews and analytics revealed that <span class="em">~30% of customers were buying without using the app at all.</span> 17% of sellers had their clients' login credentials and were placing orders on their behalf, so the customer never even saw Community Purchases. For these sellers, the app wasn't a tool; it was friction. We'd been optimizing a feature for people who never touched it.</p>
+              <p>That insight changed the mandate: the real problem wasn't the campaign, it was app adoption. We segmented the customer base into four profiles, anchored by two archetypes we called <span class="em">Karen</span> (25–45, digitally fluent) and <span class="em">Miluska</span> (35–50, non-digital, lives in WhatsApp and Facebook), and rebuilt the experience around getting both into the app and keeping them there.</p>
+            </div>
+          </section>
+
+          <section class="sec" id="shipped">
+            <p class="sec__label"><span class="n">03</span> what shipped</p>
+            <h2 class="sec__h">Four initiatives, two in depth</h2>
+            <div class="prose">
+              <p>The redesign produced four initiatives. The two below carried the most weight; the other two are noted at the end.</p>
+            </div>
+
+            <div class="exhibits">
+
+              <figure class="exhibit">
+                <figcaption class="exhibit__head"><span><span class="ex-n">01</span> · Home 2.0</span></figcaption>
+                <img class="figimg" src="../assets/favo-fig01-home.jpg" data-gallery-extra="../assets/favo-fig01-home-detail-1.jpg::Favo Home 2.0 — mobile detail: category shortcut rail, the Gran Liquidación 80% promo banner, and the personalized 'Recomendadas para ti' product grid with discount tags||../assets/favo-fig01-home-detail-2.jpg::Favo Home 2.0 — mobile detail: free-shipping bar, 'Nuestras mejores ofertas' pack cards, category shortcuts, and the personalized recommendations grid" alt="Favo Home 2.0 — three mobile screens showing the redesigned home: best-offers banners, category shortcuts, a Gran Liquidación promo, and personalized 'Recomendadas para ti' product rails" />
+
+                <div class="exhibit__cap">
+                  <h4>Personalized + restructured</h4>
+                  <p>70% of new customers never made a second purchase despite opening the app repeatedly. We hypothesized the home screen wasn't communicating Favo's core “cheapest prices” promise. An A/B/C/D test isolated the variables: a restructured home (+17% avg spend) and personalization (+17%) each helped, but combined they delivered <span class="em">+30% average spend</span>, lifted scroll-to-bottom from 30% to 80%, and raised home conversion from 40% to 70%.</p>
+                </div>
+              </figure>
+
+              <figure class="exhibit">
+                <figcaption class="exhibit__head"><span><span class="ex-n">02</span> · visible savings</span></figcaption>
+                <img class="figimg" src="../assets/favo-fig02-savings.jpg" data-gallery-extra="../assets/favo-fig02-savings-detail-1.jpg::Favo visible savings — mobile detail: per-product 'Ahorra S/10.00' tags on the recommendations grid and a sticky bottom bar totalling cart savings (S/120.00) next to the cart total||../assets/favo-fig02-savings-detail-2.jpg::Favo visible savings — mobile detail: account view with 'Ahorros acumulados en el mes', split into savings on products (S/100.00) and savings from not going to the store (S/20.00)" alt="Favo visible-savings components — three mobile screens: an order-confirmation 'Acabas de ahorrar S/120.00' screen, a per-product 'Ahorra S/10.00' tag with a sticky cart-savings bar, and an account view showing monthly accumulated savings on products and transport" />
+
+                <div class="exhibit__cap">
+                  <h4>Visible savings as proof</h4>
+                  <p>For Favo's price sensitive customers, the app never actually showed how much they were saving. We surfaced savings, and community savings as social proof, at home, cart, and checkout. A/B/C testing on placement and treatment drove a +25% lift in retention.</p>
+                </div>
+              </figure>
+
+              <ul class="brief-list">
+                <li>
+                  <span class="b-h">Simplified first-purchase flow</span>
+                  <span class="b-d">+30% end-to-end first-purchase conversion, designed for Miluska's non-digital profile.</span>
+                </li>
+                <li>
+                  <span class="b-h">Personalized pricing for new customers</span>
+                  <span class="b-d">+14% first-purchase conversion, 1.7× new customers, sub-$5 CAC.</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="sec" id="outcome">
+            <p class="sec__label"><span class="n">04</span> outcome</p>
+            <div class="metrics" role="list">
+              <div class="metric-cell" role="listitem"><div class="big">7→14<span class="unit">%</span></div><div class="lab">session conversion (6 mo)</div></div>
+              <div class="metric-cell" role="listitem"><div class="big">35K<span class="unit">+</span></div><div class="lab">daily active users (from 10K)</div></div>
+              <div class="metric-cell" role="listitem"><div class="big">~7<span class="unit">×</span></div><div class="lab">the LATAM e-commerce average</div></div>
+              <div class="metric-cell" role="listitem"><div class="big">1<span class="unit">st</span></div><div class="lab">scalable UI kit, established</div></div>
+            </div>
+            <div class="prose" style="margin-top: 1.75rem;">
+              <p>Daily active users grew from 10K (Mar 2023) to 35K+ (Feb 2024). Session level conversion rose from 7% to 14% in six months, against a 1–2% Peruvian e-commerce average. I also established Favo's first scalable UI kit, standardizing the visual language and accelerating design-to-dev handoff.</p>
+            </div>
+          </section>
+
+          <section class="sec" id="reflection">
+            <p class="sec__label"><span class="n">05</span> reflection</p>
+            <div class="prose">
+              <p>The biggest lesson was how close we came to solving the wrong problem. We were a discovery phase away from spending months optimizing a feature for users who would never see it. If I did it again, I'd push for that segmentation research before the growth roadmap was set, not after; it would have reordered our priorities from day one.</p>
+            </div>
+          </section>
+
+        </article>
+      </div>
+    </div>
+
+    <a class="cs-next" href="quantum-talent.html">
+      <div>
+        <div class="nx-label">next case study →</div>
+        <div class="nx-title">The “Export” button at Quantum Talent</div>
+      </div>
+      <span class="nx-ar" aria-hidden="true">→</span>
+    </a>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <a href="../index.html" class="brand" aria-label="Giuseppe Orellana — home">
+          <span>Giuseppe Orellana</span>
+        </a>
+        <p class="footer-blurb">Senior product designer based in London.</p>
+      </div>
+      <div>
+        <h4>pages</h4>
+        <div class="footer-links">
+          <a href="../work.html">Work</a>
+          <a href="../about.html">About</a>
+          <a href="../index.html">Home</a>
+        </div>
+      </div>
+      <div>
+        <h4>elsewhere</h4>
+        <div class="footer-links">
+          <a href="mailto:gop.orellanap@gmail.com?subject=Hey%20Giuseppe%20Orellana">Email</a>
+          <a href="https://www.linkedin.com/in/giuseppeorellanap/" target="_blank" rel="noopener">Linkedin</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 Giuseppe Orellana</span>
+      <span>All rights and lefts reserved.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../loader.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

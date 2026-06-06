@@ -1,0 +1,80 @@
+/* =========================================================
+   Giuseppe Orellana — Page loader
+   A dark, inverted intro that curtains up to reveal the
+   light page beneath. Same mono + sharp-border vocabulary
+   as the site, flipped to ink-on-paper -> paper-on-ink.
+   ========================================================= */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  /* On-brand near-black — the inverse of --paper */
+  background: #1C1D20;
+  color: #F4F3EF;
+  /* Curtain reveal */
+  transform: translateY(0);
+  transition: transform 0.66s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+}
+.loader[hidden] { display: none; }
+
+/* The box: thin rule, sharp corners, word centred above a progress strip */
+.loader__box {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  box-sizing: border-box;
+  /* leave room so the word centres in the area ABOVE the bar */
+  padding-bottom: 15px;
+  border: 1px solid rgba(244, 243, 239, 0.26);
+  display: grid;
+  place-items: center;
+}
+
+.loader__word {
+  font-family: "Geist Mono", ui-monospace, "SF Mono", "Roboto Mono", Menlo, monospace;
+  font-size: 1.55rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #F4F3EF;
+  /* hard cut — no transition on text swap */
+  text-align: center;
+  line-height: 1.12;
+  text-wrap: balance;
+  padding-inline: 0.5rem;
+  /* two-word titles (QUANTUM TALENT / REAL PLAZA) wrap; single words stay on one line */
+}
+
+/* Progress strip flush to the bottom edge of the box */
+.loader__bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 15px;
+  border-top: 1px solid rgba(244, 243, 239, 0.26);
+  overflow: hidden;
+}
+.loader__bar > span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #F4F3EF;
+  /* fills across the run; --loader-run is set inline by loader.js */
+  animation: loader-fill var(--loader-run, 1000ms) linear forwards;
+}
+@keyframes loader-fill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* Reveal state — slide the whole curtain up */
+.loader.is-revealing { transform: translateY(-100%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .loader { transition: none; }
+  .loader__bar > span { animation: none; width: 100%; }
+}

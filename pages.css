@@ -1,0 +1,281 @@
+/* =========================================================
+   Giuseppe Orellana — pages.css
+   About, Work index, and Case study layouts.
+   Loaded in addition to styles.css on those pages.
+   ========================================================= */
+
+/* ---------- Generic page header ---------- */
+.page-head {
+  padding: clamp(2.25rem, 5vw, 4.5rem) var(--pad) clamp(1.75rem, 3.5vw, 2.75rem);
+  border-bottom: 1px solid var(--line);
+}
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--mute);
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+.crumb a { color: var(--mute); transition: color 0.12s var(--ease); }
+.crumb a:hover { color: var(--ink); }
+.crumb .sep { color: var(--line-2); }
+.crumb .here { color: var(--ink); }
+.page-title { max-width: 18ch; }
+.page-dek { margin-top: clamp(1rem, 2.5vw, 1.5rem); color: var(--mute); max-width: 56ch; }
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem) 0;
+  padding: clamp(2rem, 5vw, 3.5rem) var(--pad);
+}
+/* Mobile: portrait leads the page */
+.about-side { order: -1; }
+@media (min-width: 900px) {
+  .about-wrap {
+    grid-template-columns: minmax(18rem, 26rem) 1fr;
+    gap: 0 clamp(2.75rem, 5vw, 5rem);
+    align-items: start;
+  }
+  .about-side { order: 0; grid-column: 1; grid-row: 1; }
+  .about-prose { grid-column: 2; grid-row: 1; }
+}
+.about-prose { max-width: 60ch; }
+.about-prose p { font-size: 1.125rem; line-height: 1.62; margin-bottom: 1.4em; }
+.about-prose p:first-child {
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  line-height: 1.34;
+  letter-spacing: -0.018em;
+  margin-bottom: 1.5em;
+}
+.about-prose .human {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 1.0625rem;
+  color: var(--ink);
+}
+.about-prose .human .label { display: block; margin-bottom: 0.75rem; }
+.about-cta { margin-top: clamp(2rem, 4vw, 2.75rem); display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.about-side { position: relative; }
+@media (min-width: 900px) { .about-side { position: sticky; top: 4.5rem; } }
+.about-portrait { margin-bottom: 1.5rem; }
+.about-portrait .ph__note { font-size: 0.78rem; }
+.about-side .facts { border-top: 1px solid var(--line); }
+.about-prose-fig { margin-top: 2.5rem; }
+
+/* =========================================================
+   WORK INDEX  (reuses .entry / .feat from styles.css)
+   ========================================================= */
+.work-note {
+  margin-top: clamp(1.25rem, 3vw, 1.75rem);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--mute);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.work-note .acc { color: var(--acc); }
+
+/* =========================================================
+   CASE STUDY
+   ========================================================= */
+
+/* Reading progress */
+.reading-progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  z-index: 60;
+  background: var(--line);
+}
+.reading-progress span {
+  display: block;
+  height: 100%;
+  background: var(--ink);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+
+/* Header */
+.cs-head { padding: clamp(2rem, 5vw, 4rem) var(--pad) clamp(1.75rem, 3.5vw, 2.5rem); }
+.cs-kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--acc); margin-bottom: 1.1rem; }
+.cs-title {
+  font-size: clamp(2rem, 4.6vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 555;
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.cs-dek {
+  margin-top: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  line-height: 1.45;
+  letter-spacing: -0.012em;
+  color: var(--mute);
+  max-width: 52ch;
+}
+
+/* Hero figure */
+.cs-hero-fig { padding: clamp(1.5rem, 3vw, 2.5rem) var(--pad) 0; }
+
+/* Body grid: sticky TOC + reading column */
+.cs-body { padding: clamp(2rem, 4vw, 3.5rem) var(--pad) 0; }
+.cs-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
+@media (min-width: 940px) {
+  .cs-grid { grid-template-columns: 12rem 1fr; gap: 0 clamp(2.5rem, 5vw, 5rem); }
+}
+
+.cs-toc { display: none; }
+@media (min-width: 940px) {
+  .cs-toc {
+    display: block;
+    position: sticky;
+    top: 4.5rem;
+    align-self: start;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+  }
+}
+.cs-toc ol { list-style: none; margin: 0; padding: 0; }
+.cs-toc a {
+  display: block;
+  padding: 0.4rem 0 0.4rem 0.85rem;
+  border-left: 1px solid var(--line);
+  color: var(--faint);
+  letter-spacing: 0.02em;
+  transition: color 0.12s var(--ease), border-color 0.12s var(--ease);
+}
+.cs-toc a:hover { color: var(--mute); }
+.cs-toc a[aria-current="true"] { color: var(--ink); border-left-color: var(--ink); }
+.cs-toc .toc-meta { margin-top: 1.5rem; padding-left: 0.85rem; color: var(--faint); line-height: 1.5; }
+
+/* Reading column */
+.cs-main { min-width: 0; }
+.prose { max-width: 68ch; }
+.prose p { font-size: 1.125rem; line-height: 1.62; margin-bottom: 1.3em; }
+.prose p strong, .prose .em { color: var(--acc); font-weight: 540; }
+.prose .num-em { color: var(--ink); font-weight: 540; }
+.prose .cs-aside {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--mute);
+  border-left: 2px solid var(--line-2);
+  padding-left: 1rem;
+  margin-bottom: 1.3em;
+  max-width: 60ch;
+}
+.prose .cs-aside .k { color: var(--ink); text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.5em; }
+
+/* Section */
+.sec { padding: clamp(2.25rem, 4.5vw, 3.5rem) 0; border-top: 1px solid var(--line); scroll-margin-top: 4.5rem; }
+.sec:first-of-type { border-top: 0; padding-top: 0; }
+.sec__label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mute);
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-bottom: 1.25rem;
+}
+.sec__label .n { color: var(--acc); }
+.sec__h { font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.08; letter-spacing: -0.022em; margin-bottom: 1.25rem; max-width: 24ch; }
+
+/* TL;DR block */
+.tldr { border: 1px solid var(--ink); }
+.tldr__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--mute);
+}
+.tldr__meta .k { color: var(--ink); }
+.tldr__body { padding: 1.1rem 1.1rem 1.25rem; }
+.tldr__body p { font-size: 1.0625rem; line-height: 1.55; margin: 0; }
+.tldr__body .em { color: var(--acc); }
+
+/* Exhibits — figure + caption as a bound unit */
+.exhibits { display: flex; flex-direction: column; gap: clamp(2rem, 4vw, 3.25rem); margin-top: 1.75rem; }
+.exhibit { border-top: 1px solid var(--line); padding-top: clamp(1.25rem, 2.5vw, 1.75rem); margin: 0; }
+.exhibit__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--mute);
+}
+.exhibit__head .ex-n { color: var(--acc); }
+.exhibit__cap { margin-top: 1.1rem; display: grid; gap: 0.6rem; max-width: 60ch; }
+.exhibit__cap h4 { font-size: 1.2rem; letter-spacing: -0.018em; line-height: 1.2; }
+.exhibit__cap p { font-size: 1.0125rem; line-height: 1.56; color: var(--mute); margin: 0; }
+.exhibit__cap .em { color: var(--acc); }
+.exhibit__note {
+  margin-top: 1.1rem;
+  padding: 0.8rem 1rem;
+  border: 1px dashed var(--line-2);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--mute);
+}
+.exhibit__note .k { color: var(--ink); text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* Mentioned/briefly list */
+.brief-list { list-style: none; margin: 1.25rem 0 0; padding: 0; border-top: 1px solid var(--line); }
+.brief-list li { padding: 1rem 0; border-bottom: 1px solid var(--line); display: grid; gap: 0.35rem; }
+.brief-list .b-h { font-weight: 540; letter-spacing: -0.01em; }
+.brief-list .b-d { color: var(--mute); font-size: 1rem; line-height: 1.5; }
+
+/* Outcome metrics — plain text, no counters */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 0.5rem;
+}
+.metric-cell { background: var(--paper); padding: clamp(1.1rem, 2vw, 1.5rem) 1.1rem; }
+.metric-cell .big { font-size: clamp(1.9rem, 3.6vw, 2.85rem); line-height: 1; letter-spacing: -0.035em; font-weight: 555; }
+.metric-cell .big .unit { font-size: 0.55em; letter-spacing: -0.01em; }
+.metric-cell .lab { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.04em; color: var(--mute); margin-top: 0.6rem; line-height: 1.4; }
+
+/* Next case study */
+.cs-next {
+  border-top: 1px solid var(--ink);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(2rem, 4vw, 3rem) var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  color: inherit;
+  transition: background 0.1s var(--ease);
+}
+.cs-next:hover { background: var(--ink); }
+.cs-next:hover, .cs-next:hover * { color: var(--paper); }
+.cs-next .nx-label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--mute); margin-bottom: 0.5rem; }
+.cs-next .nx-title { font-size: clamp(1.3rem, 2.8vw, 2rem); letter-spacing: -0.025em; font-weight: 545; max-width: 18ch; }
+.cs-next .nx-ar { font-size: clamp(1.5rem, 3vw, 2.25rem); flex: none; }
